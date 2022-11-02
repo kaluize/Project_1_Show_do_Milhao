@@ -1,0 +1,11 @@
+/*#startScreen {
+    background-image: url(../assets/Fundo-inicial.jpeg
+  }
+*/
+  .hide {
+    display:none;
+  }
+
+  .show {
+    display:block;
+  }

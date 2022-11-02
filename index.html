@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LINKANDO O CSS -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Show do Milhão</title>
+</head>
+<body>
+
+
+    <div id="startScreen" class="show">
+        <!-- Tela inicial - Logo grande do Show do milhao, centralizado -->
+        <p>SHOW DO MILHÃO</p>
+        <button id="botaoJogar">JOGAR</button>
+    </div>
+
+
+    <div id="gameScreenTop" class="hide">
+        <p id="valorPergunta">Pergunta valendo xx reais</p>
+        <p id="valorAtual">Seu valor acumulado é de:</p>
+        <div id="pergunta">
+        </div>
+        <div id="respostas">
+            <p> sessao com 4 respostas </p>
+            <p>Se acertar - Resposta certa fica com fundo verde + áudio de "acertou "</p>
+            <p>Se errar - resposta certa fica com fundo verde, resposta errada fica com fundo vermelho + áudio de "perdeu"</p>
+        </div> 
+    </div>
+
+
+    <div id="gameScreenBottom" class="hide">
+        <div>
+            <button id="botaoErrar">ERRAR</button>
+            <button id="botaoParar"> PARAR</button>
+            <button id="botaoAcertar">ACERTAR</button>
+            <p id="valorSeErrar"> R$ X.XXX </p>
+            <p id="valorSeParar"> R$ X.XXX </p>
+            <p id="valorSeAcertar"> R$ X.XXX </p>
+        </div>
+    
+        <div id="status">
+            <p id="mensagemStatus">MENSAGEM DE STATUS</p>
+            <p>Se acertar - "RESPOSTA CERTA!" + "Você acumulou $$$" + botão CONTINUAR + "próxima pergunta valendo $$ </p>
+            <p>Se errar - "VOCÊ ERROU" + "Você acumulou $$$" + respostas + botao JOGAR NOVAMENTE </p>
+            <p>Se parar - "VOCÊ PAROU" + "Você acumulou $$$"+ botão JOGAR NOVAMENTE + áudio genérico</p>
+            <p>Se chegar no 1 milhão - "PARABÉNS! VOCÊ GANHOU UM MILHÃO!" + botão JOGAR NOVAMENTE + música de vitória</p>
+            <button id="botaoContinuar">CONTINUAR</button>
+            <button id="botaoJogarNovamente">JOGAR NOVAMENTE</button>
+        </div>
+    </div>
+
+ 
+
+    <!-- LINKANDO OS SCRIPTS -->
+    <script src="./js/ShowDoMilhao.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
