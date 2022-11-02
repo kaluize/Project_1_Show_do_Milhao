@@ -4,57 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- LINKANDO O CSS -->
+   
+    <!-- Linkando o CSS -->
     <link rel="stylesheet" href="./styles/style.css" />
     <title>Show do Milhão</title>
 </head>
 <body>
 
-
+    <!-- Tela inicial -->
+    <!-- Background com logo grande do Show do Milhão -->
+    <!-- Botão "JOGAR" -->
+    <!-- Ao clicar, ir para a tela de jogo e iniciar música -->
     <div id="startScreen" class="show">
-        <!-- Tela inicial - Logo grande do Show do milhao, centralizado -->
-        <p>SHOW DO MILHÃO</p>
         <button id="botaoJogar">JOGAR</button>
     </div>
 
 
-    <div id="gameScreenTop" class="hide">
-        <p id="valorPergunta">Pergunta valendo xx reais</p>
-        <p id="valorAtual">Seu valor acumulado é de:</p>
-        <div id="pergunta">
-        </div>
-        <div id="respostas">
-            <p> sessao com 4 respostas </p>
+    <!-- Tela de Jogo -->
+    <!-- Background com campos para perguntas e respostas -->
+    <!-- Inicia musica do jogo -->
+    <!-- Parte superior - Campos das perguntas e respostas e saldo atual -->
+    <!-- Parte inferior - Botões com valores e mensagem de erro/acerto -->
+    <div id="gameScreen" class="hide">
+
+
+        <!-- Parte superior -->
+        <!-- Mostrar 1 pergunta, escolhida aleatoriamente, e 4 respostas -->
+        <!-- Ao clicar em alguma resposta, a correta fica com fundo verde e a errada em vermelho -->
+        <!-- Inicia musica do jogo -->
+        <div id="gameScreenTop">
+            <p id="valorPergunta">Pergunta valendo xx reais</p>
+            <p id="valorAtual">Seu valor acumulado é de:</p>
+            <button id="perguntaSorteada">Pergunta perguntaSorteada</button>
+            <br>
+            <button id="alternativa1">alternativa 1</button>
+            <button id="alternativa3">alternativa 3</button>
+            <br>
+            <button id="alternativa2">alternativa 2</button>
+            <button id="alternativa4">alternativa 4</button>
             <p>Se acertar - Resposta certa fica com fundo verde + áudio de "acertou "</p>
             <p>Se errar - resposta certa fica com fundo verde, resposta errada fica com fundo vermelho + áudio de "perdeu"</p>
-        </div> 
-    </div>
-
-
-    <div id="gameScreenBottom" class="hide">
-        <div>
-            <button id="botaoErrar">ERRAR</button>
-            <button id="botaoParar"> PARAR</button>
-            <button id="botaoAcertar">ACERTAR</button>
-            <p id="valorSeErrar"> R$ X.XXX </p>
-            <p id="valorSeParar"> R$ X.XXX </p>
-            <p id="valorSeAcertar"> R$ X.XXX </p>
         </div>
+
+
+        <div>
+            <div id="gameScreenBottom">
+                <button id="botaoErrar">ERRAR</button>
+                <button id="botaoParar"> PARAR</button>
+                <button id="botaoAcertar">ACERTAR</button>
+                <p id="valorSeErrar"> R$ X.XXX </p>
+                <p id="valorSeParar"> R$ X.XXX </p>
+                <p id="valorSeAcertar"> R$ X.XXX </p>
+            </div>
     
-        <div id="status">
-            <p id="mensagemStatus">MENSAGEM DE STATUS</p>
-            <p>Se acertar - "RESPOSTA CERTA!" + "Você acumulou $$$" + botão CONTINUAR + "próxima pergunta valendo $$ </p>
-            <p>Se errar - "VOCÊ ERROU" + "Você acumulou $$$" + respostas + botao JOGAR NOVAMENTE </p>
-            <p>Se parar - "VOCÊ PAROU" + "Você acumulou $$$"+ botão JOGAR NOVAMENTE + áudio genérico</p>
-            <p>Se chegar no 1 milhão - "PARABÉNS! VOCÊ GANHOU UM MILHÃO!" + botão JOGAR NOVAMENTE + música de vitória</p>
-            <button id="botaoContinuar">CONTINUAR</button>
-            <button id="botaoJogarNovamente">JOGAR NOVAMENTE</button>
+            <div id="status">
+                <p id="mensagemStatus">MENSAGEM DE STATUS</p>
+                <p>Se acertar - "RESPOSTA CERTA!" + "Você acumulou $$$" + botão CONTINUAR + "próxima pergunta valendo $$ </p>
+                <p>Se errar - "VOCÊ ERROU" + "Você acumulou $$$" + respostas + botao JOGAR NOVAMENTE </p>
+                <p>Se parar - "VOCÊ PAROU" + "Você acumulou $$$"+ botão JOGAR NOVAMENTE + áudio genérico</p>
+                <p>Se chegar no 1 milhão - "PARABÉNS! VOCÊ GANHOU UM MILHÃO!" + botão JOGAR NOVAMENTE + música de vitória</p>
+                <button id="botaoContinuar">CONTINUAR</button>
+                <button id="botaoJogarNovamente">JOGAR NOVAMENTE</button>
+            </div>
         </div>
     </div>
 
  
 
-    <!-- LINKANDO OS SCRIPTS -->
+    <!-- Linkando os Scripts -->
     <script src="./js/ShowDoMilhao.js"></script>
     <script src="./js/index.js"></script>
 </body>

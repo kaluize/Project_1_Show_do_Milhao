@@ -1,6 +1,7 @@
 // MANIPULAÇÃO DO DOM
 
 const startScreen = document.getElementById("startScreen");
+const gameScreen = document.getElementById("gameScreen");
 const gameScreenTop = document.getElementById("gameScreenTop");
 const pergunta = document.getElementById("pergunta");
 const respostas = document.getElementById("respostas");
@@ -22,23 +23,23 @@ const mensagemStatus = document.getElementById("mensagemStatus");
 
 botaoJogar.addEventListener("click",()=>{
   startScreen.className = "hide";
-  gameScreenTop.className = "show";
-  gameScreenBottom.className = "show";
+  gameScreen.className = "show";
+  const startGame = new Game();
+  startGame.showQuestion();
 });
 
 botaoJogarNovamente.addEventListener("click", ()=>{
-    startScreen.className = "show";
-    gameScreenTop.className = "hide";
-    gameScreenBottom.className = "hide";
+  startScreen.className = "show";
+  gameScreen.className = "hide";
 })
 
 
 
-const alternativa1 = document.querySelector("#alternativa1");
+/*const alternativa1 = document.querySelector("#alternativa1");
   const corretas = ["50", "200"];
   alternativa1.addEventListener("click", () => {
     console.log(corretas.includes(alternativa1.innerText));
     if (corretas.includes(alternativa1.innerText)) {
       console.log("acertou!");
     }
-  });
+  });*/

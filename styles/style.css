@@ -1,11 +1,42 @@
-/*#startScreen {
-    background-image: url(../assets/Fundo-inicial.jpeg
-  }
-*/
-  .hide {
-    display:none;
-  }
 
-  .show {
+
+#startScreen {
+  background-image: url(../assets/Fundo-inicial.png);
+  height:600px;
+  width:900px
+}
+
+#gameScreen {
+  background-color: cornflowerblue;
+  height:600px;
+  width:900px
+}
+
+.hide {
+    display:none;
+}
+
+.show {
     display:block;
-  }
+}
+
+#botaoJogar {
+  display: flex;
+  background-color: yellow;
+  height: 20px;
+  width: 180px;
+  font-size: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  border-color: black;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px rgb(28, 28, 28);
+}
+
+#botaoJogar:hover {
+  cursor: pointer;
+  transition: transform 150ms;
+  transform: scale(1.05);
+}
