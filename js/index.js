@@ -6,6 +6,7 @@ const gameScreenTop = document.getElementById("gameScreenTop");
 const pergunta = document.getElementById("pergunta");
 const respostas = document.getElementById("respostas");
 const gameScreenBottom = document.getElementById("gameScreenBottom");
+const status = document.getElementById("status");
 
 const botaoJogar = document.getElementById("botaoJogar");
 const botaoErrar = document.getElementById("botaoErrar");
@@ -18,7 +19,7 @@ const botaoAlternativa2 = document.getElementById("botaoAlternativa2");
 const botaoAlternativa3 = document.getElementById("botaoAlternativa3");
 const botaoAlternativa4 = document.getElementById("botaoAlternativa4");
 
-const valorPergunta = document.getElementById("valorPergunta");
+const valorPremio = document.getElementById("valorPremio");
 const valorAtual = document.getElementById("valorAtual");
 const valorSeErrar = document.getElementById("valorSeErrar");
 const valorSeParar = document.getElementById("valorSeParar");
@@ -26,12 +27,13 @@ const valorSeAcertar = document.getElementById("valorSeContinuar");
 const mensagemStatus = document.getElementById("mensagemStatus");
 
 const startGame = new Game();
+
 let respostaCerta = "";
 
 botaoJogar.addEventListener("click",()=>{
   startScreen.className = "hide";
   gameScreen.className = "show";
-  startGame.showQuestion();
+  startGame.perguntaAtual = startGame.showQuestion();
 });
 
 botaoJogarNovamente.addEventListener("click", ()=>{
@@ -40,18 +42,27 @@ botaoJogarNovamente.addEventListener("click", ()=>{
 })
 
 botaoAlternativa1.addEventListener("click", ()=>{
-  alert(respostaCerta);
+  startGame.validarResposta(botaoAlternativa1, startGame);
 })
 
 botaoAlternativa2.addEventListener("click", ()=>{
+  startGame.validarResposta(botaoAlternativa2, startGame);
 
 })
 
 botaoAlternativa3.addEventListener("click", ()=>{
+  startGame.validarResposta(botaoAlternativa3, startGame);
 
 })
 
 botaoAlternativa4.addEventListener("click", ()=>{
+  startGame.validarResposta(botaoAlternativa4, startGame);
+
+})
+
+botaoContinuar.addEventListener("click", ()=>{
+  startGame.round ++
+  startGame.perguntaAtual = startGame.showQuestion();
 
 })
 

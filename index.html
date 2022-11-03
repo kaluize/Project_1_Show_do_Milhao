@@ -33,39 +33,35 @@
         <!-- Ao clicar em alguma resposta, a correta fica com fundo verde e a errada em vermelho -->
         <!-- Inicia musica do jogo -->
         <div id="gameScreenTop">
-            <p id="valorPergunta">Pergunta valendo xx reais</p>
+            <p>Pergunta valendo <span id="valorPremio">xx</span></p>
             <p id="valorAtual">Seu valor acumulado é de:</p>
             <button id="botaoPerguntaSorteada">Pergunta perguntaSorteada</button>
-            <br>
-            <button id="botaoAlternativa1">alternativa 1</button>
-            <button id="botaoAlternativa3">alternativa 3</button>
-            <br>
-            <button id="botaoAlternativa2">alternativa 2</button>
-            <button id="botaoAlternativa4">alternativa 4</button>
+            <button id="botaoAlternativa1" class="botaoResposta">alternativa 1</button>
+            <button id="botaoAlternativa2" class="botaoResposta">alternativa 2</button>
+            <button id="botaoAlternativa3" class="botaoResposta">alternativa 3</button>
+            <button id="botaoAlternativa4" class="botaoResposta">alternativa 4</button>
             <p>Se acertar - Resposta certa fica com fundo verde + áudio de "acertou "</p>
             <p>Se errar - resposta certa fica com fundo verde, resposta errada fica com fundo vermelho + áudio de "perdeu"</p>
         </div>
 
 
-        <div>
-            <div id="gameScreenBottom">
-                <button id="botaoErrar">ERRAR</button>
-                <button id="botaoParar"> PARAR</button>
-                <button id="botaoAcertar">ACERTAR</button>
-                <p id="valorSeErrar"> R$ X.XXX </p>
-                <p id="valorSeParar"> R$ X.XXX </p>
-                <p id="valorSeAcertar"> R$ X.XXX </p>
-            </div>
+        <div id="gameScreenBottom">
+            <button id="botaoErrar">ERRAR</button>
+            <button id="botaoParar"> PARAR</button>
+            <button id="botaoAcertar">ACERTAR</button>
+            <p id="valorSeErrar"> R$ X.XXX </p>
+            <p id="valorSeParar"> R$ X.XXX </p>
+            <p id="valorSeAcertar"> R$ X.XXX </p>
+         </div>
     
-            <div id="status">
-                <p id="mensagemStatus">MENSAGEM DE STATUS</p>
-                <p>Se acertar - "RESPOSTA CERTA!" + "Você acumulou $$$" + botão CONTINUAR + "próxima pergunta valendo $$ </p>
-                <p>Se errar - "VOCÊ ERROU" + "Você acumulou $$$" + respostas + botao JOGAR NOVAMENTE </p>
-                <p>Se parar - "VOCÊ PAROU" + "Você acumulou $$$"+ botão JOGAR NOVAMENTE + áudio genérico</p>
-                <p>Se chegar no 1 milhão - "PARABÉNS! VOCÊ GANHOU UM MILHÃO!" + botão JOGAR NOVAMENTE + música de vitória</p>
-                <button id="botaoContinuar">CONTINUAR</button>
-                <button id="botaoJogarNovamente">JOGAR NOVAMENTE</button>
-            </div>
+        <div id="status">
+            <p id="mensagemStatus">MENSAGEM DE STATUS</p>
+            <p>Se acertar - "RESPOSTA CERTA!" + "Você acumulou $$$" + botão CONTINUAR + "próxima pergunta valendo $$ </p>
+            <p>Se errar - "VOCÊ ERROU" + "Você acumulou $$$" + respostas + botao JOGAR NOVAMENTE </p>
+            <p>Se parar - "VOCÊ PAROU" + "Você acumulou $$$"+ botão JOGAR NOVAMENTE + áudio genérico</p>
+            <p>Se chegar no 1 milhão - "PARABÉNS! VOCÊ GANHOU UM MILHÃO!" + botão JOGAR NOVAMENTE + música de vitória</p>
+            <button id="botaoContinuar">CONTINUAR</button>
+            <button id="botaoJogarNovamente">JOGAR NOVAMENTE</button>
         </div>
     </div>
 

@@ -1,16 +1,68 @@
 
 
 #startScreen {
-  background-image: url(../assets/Fundo-inicial.jpeg);
+  background-image: url(../assets/Fundo-inicio.jpeg);
+  display:flex;
+  height:600px;
+  width:900px;
+  
+}
+
+#botaoJogar {
+  display: flex;
+  background-color: #B19EFF;
+  height: 20px;
+  width: 180px;
+  font-size: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px rgb(28, 28, 28);
+  margin-top: 450px;
+}
+
+#botaoJogar:hover {
+  cursor: pointer;
+  transition: transform 150ms;
+  transform: scale(1.05);
+}
+#gameScreen {
+  color: white;
+  background-color: #002A5A;
   height:600px;
   width:900px
 }
 
-#gameScreen {
-  background-color: cornflowerblue;
-  height:600px;
-  width:900px
+#botaoPerguntaSorteada {
+  display: flex;
+  background-color: #B19EFF;
+  height: 100px;
+  width: 700px;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px rgb(28, 28, 28);  
+  margin: 10px;
 }
+
+.botaoResposta {
+  display: flex;
+  background-color: #f7d69c;
+  height: 40px;
+  width: 300px;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 10px;
+  align-items: center;
+  box-shadow: 2px 2px 2px rgb(28, 28, 28);  
+  margin: 10px;
+}
+
+
+
 
 .hide {
     display:none;
@@ -20,23 +72,10 @@
     display:block;
 }
 
-#botaoJogar {
-  display: flex;
-  background-color: yellow;
-  height: 20px;
-  width: 180px;
-  font-size: 25px;
-  padding: 20px;
-  border-radius: 10px;
-  border-color: black;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 2px 2px 2px rgb(28, 28, 28);
-}
+.verde {
+    background-color: green;
+} 
 
-#botaoJogar:hover {
-  cursor: pointer;
-  transition: transform 150ms;
-  transform: scale(1.05);
+.vermelho {
+    background-color: red;
 }
