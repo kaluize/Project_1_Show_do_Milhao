@@ -25,45 +25,52 @@ const valorSeErrar = document.getElementById("valorSeErrar");
 const valorSeParar = document.getElementById("valorSeParar");
 const valorSeAcertar = document.getElementById("valorSeContinuar");
 const mensagemStatus = document.getElementById("mensagemStatus");
+const controlesEmJogo = document.querySelector(".controlesEmJogo");
+const controlesFinalJogo = document.querySelector(".controlesFinalJogo");
 
 const startGame = new Game();
 
 let respostaCerta = "";
 
 botaoJogar.addEventListener("click",()=>{
-  startScreen.className = "hide";
-  gameScreen.className = "show";
+  startScreen.classList.add ("hide");
+  gameScreen.classList.remove("hide");
   startGame.perguntaAtual = startGame.showQuestion();
 });
 
 botaoJogarNovamente.addEventListener("click", ()=>{
-  startScreen.className = "show";
-  gameScreen.className = "hide";
+  startScreen.classList.remove ("hide");
+  gameScreen.classList.add("hide");
+  controlesEmJogo.classList.remove("hide");
+  botaoJogarNovamente.classList.add("hide");
 })
 
 botaoAlternativa1.addEventListener("click", ()=>{
   startGame.validarResposta(botaoAlternativa1, startGame);
+  controlesEmJogo.classList.add("hide");
+
 })
 
 botaoAlternativa2.addEventListener("click", ()=>{
   startGame.validarResposta(botaoAlternativa2, startGame);
-
+  controlesEmJogo.classList.add("hide");
 })
 
 botaoAlternativa3.addEventListener("click", ()=>{
   startGame.validarResposta(botaoAlternativa3, startGame);
-
+  controlesEmJogo.classList.add("hide");
 })
 
 botaoAlternativa4.addEventListener("click", ()=>{
   startGame.validarResposta(botaoAlternativa4, startGame);
-
+  controlesEmJogo.classList.add("hide");
 })
 
 botaoContinuar.addEventListener("click", ()=>{
   startGame.round ++
   startGame.perguntaAtual = startGame.showQuestion();
-
+  controlesEmJogo.classList.remove("hide");
+  botaoContinuar.classList.add("hide");
 })
 
 
