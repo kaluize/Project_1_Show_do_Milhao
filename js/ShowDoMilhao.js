@@ -117,18 +117,19 @@ class Game {
     }
 
     showQuestion() {
-        const perguntaSorteada = document.getElementById("perguntaSorteada");
-        const alternativa1 = document.getElementById("alternativa1");
-        const alternativa2 = document.getElementById("alternativa2");
-        const alternativa3 = document.getElementById("alternativa3");
-        const alternativa4 = document.getElementById("alternativa4");
+        const perguntaSorteada = document.getElementById("botaoPerguntaSorteada");
+        const alternativa1 = document.getElementById("botaoAlternativa1");
+        const alternativa2 = document.getElementById("botaoAlternativa2");
+        const alternativa3 = document.getElementById("botaoAlternativa3");
+        const alternativa4 = document.getElementById("botaoAlternativa4");
         let indicePergunta = Math.floor(Math.random()*this.perguntasNivel1.length);
         perguntaSorteada.textContent = this.perguntasNivel1[indicePergunta].pergunta;
         alternativa1.textContent = this.perguntasNivel1[indicePergunta].alternativas[0];
         alternativa2.textContent = this.perguntasNivel1[indicePergunta].alternativas[1];
         alternativa3.textContent = this.perguntasNivel1[indicePergunta].alternativas[2];
         alternativa4.textContent = this.perguntasNivel1[indicePergunta].alternativas[3];
-
+        respostaCerta = this.perguntasNivel1[indicePergunta].resposta;
+        
     }
     pickQuestion() {
       if (this.round === 1) {

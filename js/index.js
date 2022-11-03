@@ -13,6 +13,10 @@ const botaoParar = document.getElementById("botaoParar");
 const botaoAcertar = document.getElementById("botaoAcertar");
 const botaoContinuar = document.getElementById("botaoContinuar");
 const botaoJogarNovamente = document.getElementById("botaoJogarNovamente");
+const botaoAlternativa1 = document.getElementById("botaoAlternativa1");
+const botaoAlternativa2 = document.getElementById("botaoAlternativa2");
+const botaoAlternativa3 = document.getElementById("botaoAlternativa3");
+const botaoAlternativa4 = document.getElementById("botaoAlternativa4");
 
 const valorPergunta = document.getElementById("valorPergunta");
 const valorAtual = document.getElementById("valorAtual");
@@ -21,10 +25,12 @@ const valorSeParar = document.getElementById("valorSeParar");
 const valorSeAcertar = document.getElementById("valorSeContinuar");
 const mensagemStatus = document.getElementById("mensagemStatus");
 
+const startGame = new Game();
+let respostaCerta = "";
+
 botaoJogar.addEventListener("click",()=>{
   startScreen.className = "hide";
   gameScreen.className = "show";
-  const startGame = new Game();
   startGame.showQuestion();
 });
 
@@ -32,6 +38,23 @@ botaoJogarNovamente.addEventListener("click", ()=>{
   startScreen.className = "show";
   gameScreen.className = "hide";
 })
+
+botaoAlternativa1.addEventListener("click", ()=>{
+  alert(respostaCerta);
+})
+
+botaoAlternativa2.addEventListener("click", ()=>{
+
+})
+
+botaoAlternativa3.addEventListener("click", ()=>{
+
+})
+
+botaoAlternativa4.addEventListener("click", ()=>{
+
+})
+
 
 
 
