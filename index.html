@@ -10,84 +10,63 @@
     <title>Show do Milhão</title>
   </head>
   <body>
-    <!-- Tela inicial -->
-    <!-- Background com logo grande do Show do Milhão -->
-    <!-- Botão "JOGAR" -->
-    <!-- Ao clicar, ir para a tela de jogo e iniciar música -->
-    <div id="startScreen" class="startScreen">
-      <div class="intro">
-        <button id="botaoJogar" class="botaoCentro">JOGAR</button>
-      </div>
+    <!-- TELA INICIAL (logo + botão JOGAR) -->
+    <div class="telaInicial">
+      <button id="botaoJogar">JOGAR!</button>
     </div>
 
-    <!-- Tela de Jogo -->
-    <!-- Background com campos para perguntas e respostas -->
-    <!-- Inicia musica do jogo -->
-    <!-- Parte superior - Campos das perguntas e respostas e saldo atual -->
-    <!-- Parte inferior - Botões com valores e mensagem de erro/acerto -->
-    <div id="gameScreen" class="hide gameScreen1">
-      <!-- Parte superior -->
-      <!-- Mostrar 1 pergunta, escolhida aleatoriamente, e 4 respostas -->
-      <!-- Ao clicar em alguma resposta, a correta fica com fundo verde e a errada em vermelho -->
-      <!-- Inicia musica do jogo -->
-      <div id="gameScreenTop">
-        <p>Pergunta valendo <span id="valorPremio">xx</span></p>
-        <p id="valorAtual">Seu valor acumulado é de:</p>
-        <button id="botaoPerguntaSorteada">Pergunta perguntaSorteada</button>
-        <button id="botaoAlternativa1" class="botaoResposta">
+    <!-- TELA DE JOGO (inicia música)-->
+    <div class="hide telaDeJogo">
+
+      <!-- SESSÃO 1 (prêmios) -->
+      <div id="sessao1">
+        <p>Pergunta valendo <span id="valorPremio">0</span>.</p>
+        <p>Até o momento você já ganhou <span id="valorAtual">0</span>.</p>
+      </div>
+
+      <!-- SESSÃO 2 (pergunta aleatória + alternativas) -->
+      <div id="sessao2">
+
+        <!-- SESSÃO 2.1 (pergunta aleatória) -->
+        <div id="sessao2-1">
+          <button id="botaoPerguntaSorteada">PerguntaSorteada</button>
+        </div>
+
+        <!-- SESSÃO 2.2 (alternativas) -->
+        <div id="sessao2-2">
+          <button id="botaoAlternativa1" class="botaoResposta">
           alternativa 1
-        </button>
-        <button id="botaoAlternativa2" class="botaoResposta">
+         </button>
+          <button id="botaoAlternativa2" class="botaoResposta">
           alternativa 2
-        </button>
-        <button id="botaoAlternativa3" class="botaoResposta">
+          </button>
+          <button id="botaoAlternativa3" class="botaoResposta">
           alternativa 3
-        </button>
-        <button id="botaoAlternativa4" class="botaoResposta">
+          </button>
+          <button id="botaoAlternativa4" class="botaoResposta">
           alternativa 4
-        </button>
-        <p>
-          Se acertar - Resposta certa fica com fundo verde + áudio de "acertou "
-        </p>
-        <p>
-          Se errar - resposta certa fica com fundo verde, resposta errada fica
-          com fundo vermelho + áudio de "perdeu"
-        </p>
-      </div>
-
-      <div id="gameScreenBottom">
-        <div class="controlesEmJogo">
-          <button id="botaoErrar">ERRAR</button>
-          <button id="botaoParar">PARAR</button>
-          <button id="botaoAcertar">ACERTAR</button>
-          <p id="valorSeErrar">R$ X.XXX</p>
-          <p id="valorSeParar">R$ X.XXX</p>
-          <p id="valorSeAcertar">R$ X.XXX</p>
-        </div>
-        <div class="controlesFinalJogo">
-        <button id="botaoContinuar" class="hide">CONTINUAR</button>
-        <button id="botaoJogarNovamente" class="hide">JOGAR NOVAMENTE</button>
+          </button>
         </div>
       </div>
 
-      <div id="status">
-        <p id="mensagemStatus">MENSAGEM DE STATUS</p>
-        <p>
-          Se acertar - "RESPOSTA CERTA!" + "Você acumulou $$$" + botão CONTINUAR
-          + "próxima pergunta valendo $$
-        </p>
-        <p>
-          Se errar - "VOCÊ ERROU" + "Você acumulou $$$" + respostas + botao
-          JOGAR NOVAMENTE
-        </p>
-        <p>
-          Se parar - "VOCÊ PAROU" + "Você acumulou $$$"+ botão JOGAR NOVAMENTE +
-          áudio genérico
-        </p>
-        <p>
-          Se chegar no 1 milhão - "PARABÉNS! VOCÊ GANHOU UM MILHÃO!" + botão
-          JOGAR NOVAMENTE + música de vitória
-        </p>
+      <!-- SESSÃO 3 (desfechos possíveis / validação da resposta) -->
+      <div id="sessao3">
+              
+        <!-- SESSÃO 3.1 (desfechos possíveis) -->
+        <div class="desfechosPossiveis">
+          <button id="botaoErrar" class="botaoDesfechos">ERRAR </button>
+          <button id="botaoParar" class="botaoDesfechos">PARAR</button>
+          <button id="botaoAcertar" class="botaoDesfechos">ACERTAR</button>
+        </div>
+
+        <!-- SESSÃO 3.2 (validação da resposta) -->
+        <div class="status hide">
+          <div id="mensagemStatus"></div>
+          <div>
+            <button id="botaoContinuar" class="hide">CONTINUAR</button>
+            <button id="botaoJogarNovamente" class="hide">JOGAR NOVAMENTE</button>
+          </div>
+        </div>
       </div>
     </div>
 
