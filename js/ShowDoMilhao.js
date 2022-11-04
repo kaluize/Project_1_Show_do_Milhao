@@ -376,7 +376,6 @@ class Jogo {
       respostaCerta = this.perguntasNivel5[sorteioIndicePergunta].resposta;
       return this.perguntasNivel5[sorteioIndicePergunta];
     }
-    
   }
 
   validarResposta(respostaClicada, jogo) {
@@ -399,14 +398,14 @@ class Jogo {
         botaoContinuar.classList.remove("hide");
         mensagemStatus.innerHTML =
           "Parabéns! Você acertou! Vá para a próxima pergunta.";
+        const vozSilvio = new Audio("../audios/certaResposta.mp3");
+        vozSilvio.play();
       } else {
         botaoJogarNovamente.classList.remove("hide");
         mensagemStatus.innerHTML = "Parabéns! Você ganhou um milhão!!!";
         const vozSilvio = new Audio("../audios/milhao.mp3");
         vozSilvio.play();
       }
-      const vozSilvio = new Audio("../audios/certaResposta.mp3");
-      vozSilvio.play();
     } else {
       respostaClicada.classList.add("vermelho");
       status.classList.remove("hide");
@@ -417,12 +416,11 @@ class Jogo {
       const vozSilvio = new Audio("../audios/voceErrou.mp3");
       vozSilvio.play();
     }
-    [].forEach.call(cadaBotao, function(button) {
+    [].forEach.call(cadaBotao, function (button) {
       //button.disabled = true;
       if (button.textContent === respostaCerta) {
-      button.classList.add("verde");
+        button.classList.add("verde");
       }
     });
-
   }
 }
