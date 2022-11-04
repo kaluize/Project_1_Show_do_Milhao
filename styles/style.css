@@ -45,6 +45,7 @@
   width: 900px;
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
 #sessao1 {
@@ -94,7 +95,7 @@
   align-items: center;
   align-self: center;
   box-shadow: 2px 2px 2px rgb(28, 28, 28);
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .botaoResposta {
@@ -117,6 +118,8 @@
   flex-direction: row;
   align-content: stretch;
   align-items: center;
+  margin-top: 50px;
+
 
 }
 
@@ -132,7 +135,7 @@
 }
 
 .botaoDesfechos {
-  background-color: #b19eff;
+  background-color: #8fcee8;
   border-radius: 5px;
   font-size: 17px;
   font-family: sans-serif;

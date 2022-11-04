@@ -6,10 +6,10 @@ const telaDeJogo = document.querySelector(".telaDeJogo");
 //const pergunta = document.getElementById("pergunta");
 //const respostas = document.getElementById("respostas");
 //const telaDeJogoParteInferior = document.getElementById("telaDeJogoParteInferior");
-//const status = document.getElementById("status");
+const status = document.querySelector(".status");
 const botaoJogar = document.getElementById("botaoJogar");
 //const botaoErrar = document.getElementById("botaoErrar");
-//const botaoParar = document.getElementById("botaoParar");
+const botaoParar = document.getElementById("botaoParar");
 //const botaoAcertar = document.getElementById("botaoAcertar");
 const botaoContinuar = document.getElementById("botaoContinuar");
 const botaoJogarNovamente = document.getElementById("botaoJogarNovamente");
@@ -22,7 +22,7 @@ const valorAtual = document.getElementById("valorAtual");
 //const valorSeErrar = document.getElementById("valorSeErrar");
 //const valorSeParar = document.getElementById("valorSeParar");
 //const valorSeAcertar = document.getElementById("valorSeContinuar");
-//const mensagemStatus = document.getElementById("mensagemStatus");
+const mensagemStatus = document.getElementById("mensagemStatus");
 const desfechosPossiveis = document.querySelector(".desfechosPossiveis");
 //const validacao = document.querySelector(".validacao");
 
@@ -37,12 +37,7 @@ botaoJogar.addEventListener("click", () => {
 });
 
 botaoJogarNovamente.addEventListener("click", () => {
-  telaInicial.classList.remove("hide");
-  telaDeJogo.classList.add("hide");
-  desfechosPossiveis.classList.remove("hide");
-  botaoJogarNovamente.classList.add("hide");
-  mensagemStatus.classList.add("hide");
-  Jogo.rodada === 1;
+  window.location.reload();
 });
 
 botaoAlternativa1.addEventListener("click", () => {
@@ -71,4 +66,13 @@ botaoContinuar.addEventListener("click", () => {
   desfechosPossiveis.classList.remove("hide");
   botaoContinuar.classList.add("hide");
   mensagemStatus.classList.add("hide");
+
+});
+
+botaoParar.addEventListener("click", () => {
+  desfechosPossiveis.classList.add("hide");
+  status.classList.remove("hide");
+  mensagemStatus.classList.remove("hide");
+  botaoJogarNovamente.classList.remove("hide");
+  mensagemStatus.innerHTML = "Você parou. Fim de jogo.";
 });

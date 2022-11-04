@@ -261,12 +261,14 @@ class Jogo {
     alternativa2.className = "botaoResposta";
     alternativa3.className = "botaoResposta";
     alternativa4.className = "botaoResposta";
-    alternativa1.disable = false;
-    alternativa2.disable = false;
-    alternativa3.disable = false;
-    alternativa4.disable = false;
+
     valorPremio.innerHTML = this.premio[this.rodada];
     valorAtual.innerHTML = this.premio[this.rodada - 1];
+
+    const vozSilvio = new Audio("../audios/abertura.mp3");
+    vozSilvio.volume = 0.05;
+    vozSilvio.loop = true;
+    vozSilvio.play();
 
     let sorteioIndicePergunta;
 
@@ -356,7 +358,7 @@ class Jogo {
 
     if (this.rodada === 5) {
       sorteioIndicePergunta = Math.floor(
-        Math.random() * this.perg5ntasNivel5.length
+        Math.random() * this.perguntasNivel5.length
       );
       perguntaSorteada.textContent =
         this.perguntasNivel5[sorteioIndicePergunta].pergunta;
@@ -374,6 +376,7 @@ class Jogo {
       respostaCerta = this.perguntasNivel5[sorteioIndicePergunta].resposta;
       return this.perguntasNivel5[sorteioIndicePergunta];
     }
+    
   }
 
   validarResposta(respostaClicada, jogo) {
@@ -387,69 +390,39 @@ class Jogo {
     const mensagemStatus = document.querySelector("#mensagemStatus");
     const telaDeJogo = document.getElementById("telaDeJogo");
 
-    if(this.rodada === 5){
-      if(respostaClicada.textContent === respostaCerta){
-        respostaClicada.classList.add("verde");
-        status.classList.remove("hide");
-        mensagemStatus.classList.remove("hide");
-        desfechosPossiveis.classList.add("hide");
-        botaoJogarNovamente.classList.remove("hide");
-        mensagemStatus.innerHTML = "Parabéns! Você ganhou um milhão!";
-      } else {
-        respostaClicada.classList.add("vermelho");
-        status.classList.remove("hide");
-        mensagemStatus.classList.remove("hide");
-        desfechosPossiveis.classList.add("hide");
-        botaoJogarNovamente.classList.remove("hide");
-        mensagemStatus.innerHTML = "Ah que pena! Você perdeu tudo!";
-      }
-    } 
-
-    if(this.rodada !== 5){
-      if(respostaClicada.textContent === respostaCerta){
-        respostaClicada.classList.add("verde");
-        status.classList.remove("hide");
-        mensagemStatus.classList.remove("hide");
-        desfechosPossiveis.classList.add("hide");
-        botaoContinuar.classList.remove("hide");
-        mensagemStatus.innerHTML = "Parabéns! Você acertou!";
-      } else {
-        respostaClicada.classList.add("vermelho");
-        status.classList.remove("hide");
-        mensagemStatus.classList.remove("hide");
-        desfechosPossiveis.classList.add("hide");
-        botaoJogarNovamente.classList.remove("hide");
-        mensagemStatus.innerHTML = "Ah que pena! Você perdeu!";
-      }
-    }
-  }
-}
-    
-
-    /*if (respostaClicada.textContent === respostaCerta) {
+    if (respostaClicada.textContent === respostaCerta) {
       respostaClicada.classList.add("verde");
-      botaoContinuar.classList.remove("hide");
-      mensagemStatus.innerHTML =
-        "Você acumulou " + jogo.premio[jogo.rodada] + "!";
-      desfechosPossiveis.classList.remove("hide");
-      if (this.rodada === 5) {
-        botaoContinuar.classList("hide");
+      desfechosPossiveis.classList.add("hide");
+      status.classList.remove("hide");
+      mensagemStatus.classList.remove("hide");
+      if (this.rodada !== 5) {
+        botaoContinuar.classList.remove("hide");
         mensagemStatus.innerHTML =
-          "Parabéns! Você ganhou um milhão de reais!!!";
+          "Parabéns! Você acertou! Vá para a próxima pergunta.";
+      } else {
+        botaoJogarNovamente.classList.remove("hide");
+        mensagemStatus.innerHTML = "Parabéns! Você ganhou um milhão!!!";
+        const vozSilvio = new Audio("../audios/milhao.mp3");
+        vozSilvio.play();
       }
+      const vozSilvio = new Audio("../audios/certaResposta.mp3");
+      vozSilvio.play();
     } else {
       respostaClicada.classList.add("vermelho");
-      botaoContinuar.classList.add("hide");
+      status.classList.remove("hide");
+      desfechosPossiveis.classList.add("hide");
+      mensagemStatus.classList.remove("hide");
+      mensagemStatus.innerHTML = "Ah que pena! Você perdeu!";
       botaoJogarNovamente.classList.remove("hide");
-      mensagemStatus.innerHTML = "Você errou! Você acumulou o prêmio XXX";
-      if (this.rodada === 5) {
-        mensagemStatus.innerHTML = "Ah não! Você errou e perdeu tudo!";
-      }
+      const vozSilvio = new Audio("../audios/voceErrou.mp3");
+      vozSilvio.play();
     }
-
-    [].forEach.call(cadaBotao, function (botao, i) {
-      botao.disable = true;
-      if (cadaBotao[i].textContent === respostaCerta) {
-        botao.classList.add("verde");
+    [].forEach.call(cadaBotao, function(button) {
+      //button.disabled = true;
+      if (button.textContent === respostaCerta) {
+      button.classList.add("verde");
       }
-    });*/
+    });
+
+  }
+}
